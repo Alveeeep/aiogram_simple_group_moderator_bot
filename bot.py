@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 
 # When leaving this period of time, the bot will respond to messages
-@dp.message(~(6 <= F.date.hour <= 15))
+@dp.message(~(6 <= F.date.hour < 15))
 async def message_after_18(message: Message):
     await message.answer("Hello")
 
